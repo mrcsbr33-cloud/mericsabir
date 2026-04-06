@@ -37,7 +37,7 @@ m4 <- data_df_tib[ , c(3:6, 11:20)]
 #m lerin dataframe yapılmasi
 m_df = data.frame(m)
 
-#NC<merik deDerlerin filtrelenmesi
+#Numerik degerlerin filtrelenmesi
 all_num <- Filter(is.numeric, data_df_tib)
 m_num <- Filter(is.numeric, m)
 
