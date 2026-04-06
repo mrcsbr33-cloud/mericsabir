@@ -24,12 +24,12 @@ data_df_tib <- as_tibble(data_df)
 #baslıklarin ve siniflarin kontrol edilmesi
 head(data_df_tib)
 
-#y nin atanmasD1 yalnD1zca 8. sutun
+#y nin atanmasD1 yalnD1zca 7. sutun
 y=data_df_tib[7]
 #3 tane y atamasi
 y3=select(data_df_tib, m_6, m_7, m_10)
 
-#m lerin olusturulmasi (m_3 ve m_4 de etiket olduDu iC'in C'D1karD1ldD1)
+#m lerin olusturulmasi 
 m <- subset(data_df_tib, select = -c(m_3, m_4, m_6, m_7, m_10 ))
 #ayni m leri değişik sekilde oluşturulmasi
 m4 <- data_df_tib[ , c(3:6, 11:20)]
@@ -41,14 +41,14 @@ m_df = data.frame(m)
 all_num <- Filter(is.numeric, data_df_tib)
 m_num <- Filter(is.numeric, m)
 
-#sabit bir fonksiyon. Numerik ve NA degerleri eleyen
+#Numerik ve NA degerleri eleyen sabit bir fonksiyon. 
 is_numeric_nu_na <- function(col){
   is_numeric <- is.numeric(col)
   no_na <- !anyNA(col)
   return(is_numeric & no_na)
 }
 
-#tC<m deDiEkenler ve x ler oluEturulan fonksiyona giriliyor
+#tüm ddegiskenler ve m ler olusturulan fonksiyona giriliyor
 num_colu_no_na_all <- Filter(is_numeric_nu_na, all_num)
 num_colu_no_na_m <- Filter(is_numeric_nu_na, m_num)
 
