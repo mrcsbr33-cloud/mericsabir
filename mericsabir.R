@@ -37,18 +37,18 @@ m4 <- data_df_tib[ , c(3:6, 11:20)]
 #m lerin dataframe yapılmasi
 m_df = data.frame(m)
 
-#Numerik degerlerin filtrelenmesi
+#Numeric degerlerin filtrelenmesi
 all_num <- Filter(is.numeric, data_df_tib)
 m_num <- Filter(is.numeric, m)
 
-#Numerik ve NA degerleri eleyen sabit bir fonksiyon. 
+#Numeric ve NA degerleri eleyen sabit bir fonksiyon. 
 is_numeric_nu_na <- function(col){
   is_numeric <- is.numeric(col)
   no_na <- !anyNA(col)
   return(is_numeric & no_na)
 }
 
-#tüm ddegiskenler ve m ler olusturulan fonksiyona giriliyor
+#tüm ddegiskenler ve m ler olusturulan fonksiyona girilmesi
 num_colu_no_na_all <- Filter(is_numeric_nu_na, all_num)
 num_colu_no_na_m <- Filter(is_numeric_nu_na, m_num)
 
